@@ -101,4 +101,14 @@ defmodule FoodTruck.Trucks do
   def change_truck(%Truck{} = truck, attrs \\ %{}) do
     Truck.changeset(truck, attrs)
   end
+
+  def search(search_query) do
+    search_query = "%#{search_query}%"
+
+    Truck
+    |> order_by(asc: :food_items)
+    |> where([t], ilike(t.food_items, ^search_query))
+    |> limit(5)
+    |> Repo.all()
+  end
 end
