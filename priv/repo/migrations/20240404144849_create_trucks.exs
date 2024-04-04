@@ -6,7 +6,7 @@ defmodule FoodTruck.Repo.Migrations.CreateTrucks do
       add :id, :binary_id, primary_key: true
       add :name, :string
       add :address, :string
-      add :food_items, :string
+      add :food_items, :text
 
       timestamps(type: :utc_datetime)
     end

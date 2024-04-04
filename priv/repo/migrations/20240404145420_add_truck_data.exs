@@ -1,5 +1,8 @@
-defmodule FoodTruck.DataParser do
+defmodule FoodTruck.Repo.Migrations.AddTruckData do
+  use Ecto.Migration
+
   alias FoodTruck.Trucks.Truck
+
   def parse_food_truck_data do
     "Mobile_Food_Facility_Permit.csv"
     |> Path.expand(__DIR__)
@@ -15,7 +18,9 @@ defmodule FoodTruck.DataParser do
     %{
       name: name,
       address: address,
-      food_items: food_items
+      food_items: food_items,
+      inserted_at: DateTime.truncate(DateTime.utc_now(), :second),
+      updated_at: DateTime.truncate(DateTime.utc_now(), :second)
     }
   end
 
@@ -26,10 +31,10 @@ defmodule FoodTruck.DataParser do
     )
   end
 
-  def do_up do
+  def change do
     parse_food_truck_data()
     |> Stream.map(&prepare_data(&1))
-    |> Stream.chunk_every(1000)
+    |> Stream.chunk_every(10)
     |> Stream.each(&insert(&1))
     |> Stream.run()
   end

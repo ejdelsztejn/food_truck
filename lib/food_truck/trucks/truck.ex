@@ -16,6 +16,6 @@ defmodule FoodTruck.Trucks.Truck do
   def changeset(truck, attrs) do
     truck
     |> cast(attrs, [:name, :address, :food_items])
-    |> validate_required([:name, :address, :food_items])
+    |> validate_required([:name])
   end
 end

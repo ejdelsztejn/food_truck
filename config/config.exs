@@ -9,7 +9,11 @@ import Config
 
 config :food_truck,
   ecto_repos: [FoodTruck.Repo],
-  generators: [timestamp_type: :utc_datetime, binary_id: true]
+  generators: [timestamp_type: :utc_datetime, binary_id: true],
+  database: "food_truck_dev",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost"
 
 # Configures the endpoint
 config :food_truck, FoodTruckWeb.Endpoint,
