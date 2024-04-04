@@ -1,18 +1,10 @@
 # FoodTruck
 
-To start your Phoenix server:
+This is a CRUD app that allows the user to get information about a food truck in 
 
+To run the app:
   * Run `mix setup` to install and setup dependencies
+  * Run `mix ecto.reset` to set up the postgres database
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+Now visit [`localhost:4000/trucks`](http://localhost:4000/trucks) from your browser to see the trucks and add, edit, or delete a truck

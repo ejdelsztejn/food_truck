@@ -20,6 +20,7 @@ defmodule FoodTruckWeb.Router do
     get "/", PageController, :home
     live "/trucks", TruckLive.Index, :index
     live "/trucks/new", TruckLive.Index, :new
+    live "/trucks/search", TruckLive.Search, :search
     live "/trucks/:id/edit", TruckLive.Index, :edit
 
     live "/trucks/:id", TruckLive.Show, :show
