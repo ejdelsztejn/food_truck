@@ -34,7 +34,7 @@ defmodule FoodTruck.Repo.Migrations.AddTruckData do
   def change do
     parse_food_truck_data()
     |> Stream.map(&prepare_data(&1))
-    |> Stream.chunk_every(10)
+    |> Stream.chunk_every(100)
     |> Stream.each(&insert(&1))
     |> Stream.run()
   end
