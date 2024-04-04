@@ -1,6 +1,5 @@
 <.header>
-  Truck <%= @truck.id %>
-  <:subtitle>This is a truck record from your database.</:subtitle>
+  <%= @truck.name %>
   <:actions>
     <.link patch={~p"/trucks/#{@truck}/show/edit"} phx-click={JS.push_focus()}>
       <.button>Edit truck</.button>
