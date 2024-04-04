@@ -4,9 +4,10 @@ defmodule FoodTruckWeb.TruckLive.Search do
   alias FoodTruck.Trucks
   alias Phoenix.LiveView.JS
 
+  @spec mount(any(), any(), any()) :: {:ok, any(), [{:layout, false}, ...]}
   def mount(_params, _session, socket) do
-    socket = assign(socket, trucks: [])
-    {:ok, socket, layout: false}
+    socket = assign(socket, trucks: Trucks.list_trucks)
+    {:ok, socket}
   end
 
   def handle_event("change", %{"search" => %{"query" => ""}}, socket) do

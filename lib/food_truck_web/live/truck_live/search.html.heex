@@ -79,7 +79,7 @@
             <%= for truck <- @trucks do %>
               <li id={"#{truck.id}"}>
                 <.link
-                  navigate={~p"/trucks/#{truck.slug}"}
+                  navigate={~p"/trucks/#{truck.id}"}
                   class="block p-4 hover:bg-slate-100 focus:outline-none focus:bg-slate-100 focus:text-sky-800"
                 >
                   <%= truck.name %>

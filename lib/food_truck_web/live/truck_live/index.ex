@@ -46,13 +46,13 @@ defmodule FoodTruckWeb.TruckLive.Index do
   end
 
   def handle_event("change", %{"search" => %{"query" => ""}}, socket) do
-    socket = assign(socket, :trucks, [])
+    socket = assign(socket, :search_trucks, [])
     {:noreply, socket}
   end
 
   def handle_event("change", %{"search" => %{"query" => search_query}}, socket) do
     trucks = Trucks.search(search_query)
-    socket = assign(socket, :trucks, trucks)
+    socket = assign(socket, :search_trucks, trucks)
 
     {:noreply, socket}
   end

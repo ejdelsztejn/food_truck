@@ -106,7 +106,7 @@ defmodule FoodTruck.Trucks do
     search_query = "%#{search_query}%"
 
     Truck
-    |> order_by(asc: :food_items)
+    |> order_by(asc: :name)
     |> where([t], ilike(t.food_items, ^search_query))
     |> limit(5)
     |> Repo.all()
