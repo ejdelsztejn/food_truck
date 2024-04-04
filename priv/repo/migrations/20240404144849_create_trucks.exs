@@ -1,8 +1,8 @@
-defmodule FoodTruck.Repo.Migrations.CreateFoodTruck do
+defmodule FoodTruck.Repo.Migrations.CreateTrucks do
   use Ecto.Migration
 
   def change do
-    create table(:food_truck, primary_key: false) do
+    create table(:trucks, primary_key: false) do
       add :id, :binary_id, primary_key: true
       add :name, :string
       add :address, :string
